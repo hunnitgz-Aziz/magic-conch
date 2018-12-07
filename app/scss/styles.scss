@@ -1,3 +1,10 @@
-.testing {
-  width: percentage(5/7);
-}
+@import 'base';
+@import 'shell';
+@import 'progress_bar';
+@import 'mixins';
+@import 'bg_video';
+@import 'recorder_button';
+@import 'typography';
+@import 'navbar';
+@import 'recorder_list';
+@import 'sea_button';

@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'SurfingCapital';
+  src: url('../fonts/SurfingCapital.eot');
+  src: url('../fonts/SurfingCapital.woff') format('woff'),
+       url('../fonts/SurfingCapital.ttf') format('truetype'),
+       url('..fonts/SurfingCapital.svg#SurfingCapital') format('svg'),
+       url('../fonts/SurfingCapital.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$family: 'SurfingCapital', Helvetica Neue, Arial, monospace;
+
+h1, h2, h3, h4, h5, h6, p {
+	font-family: $family;
+}

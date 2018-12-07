@@ -1,5 +1,5 @@
-# Gulp Starter for CSS Tricks Tutorial  
+# ALL HAIL THE MAGIC CONCH!!!
 
-This repo is a gulp starter for this CSS Tricks tutorial. 
+Speak into the magic conch and it'll answer all your questions! Never question or doubt the magic of the conch shell!
 
-Remember to do run the `npm install` command after cloning this repo :) 
+**Note:** This uses Matt Diamond's [recorder.js plugin](https://github.com/mattdiamond/Recorderjs) This is definitely the best way to get your recording app to work across all browsers. 

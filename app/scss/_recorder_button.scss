@@ -1,0 +1,48 @@
+.recorder-btn {
+	height: 60px;
+	width: 60px;
+	box-shadow: none;
+	border-radius: 200px;
+	font-size: 0;
+	position: relative;
+	border: 2px solid #FFF;
+	background-color: transparent;
+	outline: 0;
+	cursor: pointer;
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 40px;
+		width: 40px;
+		background-color: #FFF;
+		border-radius: 200px;
+	}
+
+	&.recording {
+		border: 2px solid red;
+
+		&:after {
+			background-color: red;
+			animation-name: flash;
+			animation-duration: 1s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+
+			//Firefox 1+
+			-webkit-animation-name: flash;
+			-webkit-animation-duration: 1s;
+			-webkit-animation-timing-function: linear;
+			-webkit-animation-iteration-count: infinite;
+
+			//Safari 3-4
+			-moz-animation-name: flash;
+			-moz-animation-duration: 1s;
+			-moz-animation-timing-function: linear;
+			-moz-animation-iteration-count: infinite;
+		}
+	}
+}

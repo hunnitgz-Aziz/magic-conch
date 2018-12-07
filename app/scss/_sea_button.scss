@@ -1,0 +1,25 @@
+.bg-audio-container {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1001;
+	opacity: 0;
+	transition: all ease-in-out 0.3s;
+
+	.bg-audio-btn {
+		border: none;
+		background: transparent;
+		cursor: pointer;
+		outline: 0;
+
+		.fas {
+			color: rgba(255,255,255,0.8);
+			font-size: 32px;
+			transiton: all ease-in-out 0.3s;
+
+			&:hover {
+				color: rgba(255,255,255,1);
+			}
+		}
+	}
+}

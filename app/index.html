@@ -1,23 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
   <meta charset="UTF-8">
-  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Magic Conch Shell</title>
   <!--build:css css/styles.min.css-->
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/print.css">
   <!--endbuild-->
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
-
 <body>
-  This is a gulp starter!
-  
+  <nav id="preloader" class="navbar">
+    <h1 class="preview-text">
+      <span>T</span>
+      <span>H</span>
+      <span>E</span>
+      <br>
+      <span>M</span>
+      <span>A</span>
+      <span>G</span>
+      <span>I</span>
+      <span>C</span>
+      <br>
+      <span>C</span>
+      <span>O</span>
+      <span>N</span>
+      <span>C</span>
+      <span>H</span>
+    </h1>
+  </nav>
+  <section id="wrapper" class="wrapper">
+    <article id="shell" class="shell"><div id="noise" class="noise"></div></article>
+    <button id="recorder-btn" class="recorder-btn">Record</button>
+  </section>
+  <div id="progress-bar" class="progress-bar">
+    <div id="loading-bar" class="loading-bar"></div>
+  </div>
+  <section class="fullscreen-bg">
+    <video loop muted autoplay poster="images/bg-loop.jpg" class="fullscreen-bg__video">
+      <source src="videos/bg-loop.webm" type="video/webm">
+      <source src="videos/bg-loop.mp4" type="video/mp4">
+    </video>
+  </section>
+  <section class="bg-audio">
+    <audio id="bg-audio" loop controls hidden><source src="videos/bg-audio.mp3" type="audio/mpeg"></audio>
+  </section>
+  <ol id="recordingsList" class="recordingsList"></ol>
+  <div id="bg-audio-container" class="bg-audio-container">
+    <button id="bg-audio-btn" class="bg-audio-btn"><i class="fas fa-water"></i></button>
+  </div>
   <!--build:js js/main.min.js -->
-  <script src="js/lib/a-library.js"></script>
-  <script src="js/lib/another-library.js"></script>
+  <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/preloader.js"></script>
+  <script src="js/bg-audio.js"></script>
   <!-- endbuild -->
 </body>
-
 </html>

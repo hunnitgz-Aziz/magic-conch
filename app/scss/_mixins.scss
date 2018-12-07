@@ -1,0 +1,28 @@
+/* BOUNCE EFFECT FOR PROJECT ARROWS */
+
+@keyframes bounce {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(0, 10px, 0); }
+}
+
+/* FLASHING RECORDING BUTTON */
+
+@keyframes flash {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1.0; }
+}
+
+//Firefox 1+
+@-webkit-keyframes flash {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1.0; }
+}
+
+//Safari 3-4
+@-moz-keyframes flash {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1.0; }
+}

@@ -9,11 +9,7 @@ var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
 var del = require('del');
 var runSequence = require('run-sequence');
-
-// Basic Gulp task syntax
-gulp.task('hello', function() {
-  console.log('Hello Zell!');
-})
+var babel  = require('gulp-babel');
 
 // Development Tasks 
 // -----------------
@@ -51,6 +47,7 @@ gulp.task('useref', function() {
 
   return gulp.src('app/*.html')
     .pipe(useref())
+    .pipe(gulpIf('*.js', babel({presets: ['@babel/env']})))
     .pipe(gulpIf('*.js', uglify()))
     .pipe(gulpIf('*.css', cssnano()))
     .pipe(gulp.dest('dist'));
@@ -70,6 +67,20 @@ gulp.task('images', function() {
 gulp.task('fonts', function() {
   return gulp.src('app/fonts/**/*')
     .pipe(gulp.dest('dist/fonts'))
+})
+
+//Copying sounds
+
+gulp.task('sounds', function() {
+  return gulp.src('app/sounds/**/*')
+    .pipe(gulp.dest('dist/sounds'))
+})
+
+//Copying videos
+
+gulp.task('videos', function() {
+  return gulp.src('app/videos/**/*')
+    .pipe(gulp.dest('dist/videos'))
 })
 
 // Cleaning 
@@ -96,7 +107,7 @@ gulp.task('build', function(callback) {
   runSequence(
     'clean:dist',
     'sass',
-    ['useref', 'images', 'fonts'],
+    ['useref', 'images', 'fonts', 'sounds', 'videos'],
     callback
   )
 })
