@@ -56,8 +56,6 @@ function startRecording() {
     }).catch(function(err) {
       //enable the record button if getUserMedia() fails
       recordButton.disabled = false;
-      stopButton.disabled = true;
-      pauseButton.disabled = true
     });
 }
 
