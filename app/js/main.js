@@ -6,6 +6,9 @@ let response = [];
 let audio_blurb = document.getElementById('audio-blurb');
 let mediaRecorder;
 let shell_noise = document.getElementById('noise');
+let conch = document.getElementById('recordingsList');
+let random_response;
+let au = document.getElementById('mic-audio');
 
 //webkitURL is deprecated but nevertheless
 URL = window.URL || window.webkitURL;
@@ -76,20 +79,17 @@ function stopRecording() {
 function createDownloadLink(blob) {
 	
 	var url = URL.createObjectURL(blob);
-	var au = document.createElement('audio');
-	var li = document.createElement('li');
 
 	//add controls to the <audio> element
 	au.controls = true;
-	au.autoplay = true;
 	au.src = url;
+	au.autoplay = false;
 	au.play();
 	
 	//add the new audio element to li
-	li.appendChild(au);
 
 	//add the li element to the ol
-	recordingsList.appendChild(li);
+	conch.appendChild(au);
 }
 
 // LOAD AUDIO RESPONSES
@@ -97,10 +97,9 @@ function shell_response() {
 	for(let i = 0; i < 8; i++) {
 		response[i] = new Audio(`sounds/response${i}.mp3`);
 	}
-	const random_response = response[Math.floor(Math.random() * response.length)];
-	random_response.autoplay = true;
-	random_response.play();
-	shell_noise.style.display = 'block';
+	random_response = response[Math.floor(Math.random() * response.length)];
+	random_response.setAttribute("id", "conch-says");
+	conch.appendChild(random_response);
 }
 
 function loading_bar() {
@@ -140,16 +139,23 @@ recordButton.addEventListener('click', function (event) {
 	// RECORD AUDIO RESPONSE & STORE AUDIO DATA CHUNK
 	loading_bar();
 	add_button_class();
+	shell_response();
+	random_response.pause();
+	au.pause();
 
 	setTimeout(() => {
     stopRecording();
 		add_button_class();
 		setTimeout(() => {
-			shell_response();
+			shell_noise.style.display = 'block';
+			random_response.play();
 			remove_button_class();
-			recordingsList.innerHTML = '';
+			
 			setTimeout(() => {
 				shell_noise.style.display = 'none';
+				au.src = "";
+				var elem = document.querySelector('#conch-says');
+				elem.parentNode.removeChild(elem);
 			}, 1500);
 		}, 6500);
 	}, 6000);
