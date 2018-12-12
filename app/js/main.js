@@ -81,7 +81,7 @@ function createDownloadLink(blob) {
 
 	//add controls to the <audio> element
 	au.controls = true;
-
+	au.autoplay = false;
 	au.src = url;
 	au.play();
 	
@@ -98,6 +98,7 @@ function shell_response() {
 		response[i] = new Audio(`sounds/response${i}.mp3`);
 	}
 	const random_response = response[Math.floor(Math.random() * response.length)];
+	random_response.autoplay = false;
 	random_response.play();
 	shell_noise.style.display = 'block';
 }
