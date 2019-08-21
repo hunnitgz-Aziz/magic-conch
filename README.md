@@ -2,4 +2,6 @@
 
 Speak into the magic conch and it'll answer all your questions! Never question or doubt the magic of the conch shell!
 
-**Note:** This uses Matt Diamond's [recorder.js plugin](https://github.com/mattdiamond/Recorderjs) This is definitely the best way to get your recording app to work across all browsers. 
+**Note:** This uses Matt Diamond's [recorder.js plugin](https://github.com/mattdiamond/Recorderjs) This is definitely the best way to get your recording app to work across all browsers.
+
+You can view the project [here](https://elegant-haibt-6b2b35.netlify.com)
