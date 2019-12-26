@@ -181,9 +181,9 @@ h1, h2, h3, h4, h5, h6, p {
   opacity: 0; }
   .navbar .preview-text {
     text-align: center;
-    color: #FFF; }
+    color: #fff; }
     .navbar .preview-text span {
-      opacity: 0; }
+      opacity: 1; }
 
 .recordingsList {
   display: none; }
